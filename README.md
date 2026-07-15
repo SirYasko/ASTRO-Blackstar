@@ -12,16 +12,24 @@ Right now only **ID:Core Stereo 10 V4** and **ID:Core Stereo 40 V1** are
 confirmed working (their USB VID/PID are known). Other models/generations in
 the ID:Core Stereo line may or may not work yet.
 
-If you have a different model and it doesn't connect, please get in touch
-with your amp's **USB VID/PID** so it can be added:
+If you have a different model, **you can still connect** — the picker
+isn't restricted to only known models. Once connected, check the
+**DEVICE** field on the bottom strip: it shows your amp's `VID:PID` (e.g.
+`27D4:0013`) straight from the browser, no OS tools needed. Please get in
+touch with that value so it can be added.
+
+It'd also help to know your amp's **USB Product Version** (a few digits
+like `0x0098`) — some models of the same wattage may share a PID and only
+differ by this field, and it isn't something the browser can read, so it
+has to come from the OS instead:
 - **Windows:** Device Manager → Properties → Details → Hardware Ids
 - **macOS:** About This Mac → More Info → System Report → USB (left
-  sidebar) → select the amp's entry → **Product ID** / **Vendor ID**. This
-  is the most reliable way. In Terminal, `system_profiler SPUSBDataType`
-  works on older macOS versions; on newer ones the same data is under
+  sidebar) → select the amp's entry → **Product ID** / **Vendor ID** /
+  **Product Version**. In Terminal, `system_profiler SPUSBDataType` works
+  on older macOS versions; on newer ones the same data is under
   `system_profiler SPUSBHostDataType` instead (Apple renamed it) — if one
-  prints nothing, try the other.
-  Search for an entry similar to the one below:
+  prints nothing, try the other. Search for an entry similar to the one
+  below:
   ```
   ID:Core v4:
      Location ID: 0x02000000
